@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class App extends React.Component{
-
     constructor(props) {
         super(props);
     }
@@ -14,8 +13,8 @@ class App extends React.Component{
         const { actions, text} = this.props;
         return (
             <div>
-            <Hello actions={actions} text={text}/>
-            <Change actions={actions}/>
+                <Hello actions={actions} text={text}/>
+                <Change actions={actions}/>
             </div>
     );
     }
@@ -24,7 +23,7 @@ class App extends React.Component{
 class Hello extends React.Component{
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
+        // this.handleClick = this.handleClick.bind(this); what is using for?
     }
 
     handleClick(){
@@ -33,8 +32,8 @@ class Hello extends React.Component{
 
     render() {
         return (
-            <h1 onClick={this.handleClick}> {this.props.text} </h1>
-    );
+            <h1 onClick={ this.handleClick }> { this.props.text } </h1>
+        );
     }
 }
 
@@ -50,7 +49,7 @@ class Change extends React.Component{
 
     render() {
         return (
-            <button onClick={this.handleClick} >change</button>
+            <button onClick={ this.handleClick } >change</button>
     );
     }
 }
@@ -62,7 +61,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch){
     return{
-        actions : bindActionCreators({changeText:changeText,buttonClick:buttonClick},dispatch)
+        actions : bindActionCreators({ changeText:changeText,buttonClick:buttonClick },dispatch)
     }
 }
 

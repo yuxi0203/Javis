@@ -1,5 +1,3 @@
-import { changeText, buttonClick} from '../actions/actions';
-
 //reducer
 const initialState = {
     text: 'Hello'
