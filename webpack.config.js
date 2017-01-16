@@ -12,8 +12,5 @@ module.exports = {
             exclude: /(node_modules|bower_components)/,
             loader: 'babel', // 'babel-loader' is also a legal name to reference
         }]
-    },
-    devServer: { // Make react-router works
-        historyApiFallback: true
     }
 };
